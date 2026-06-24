@@ -9,11 +9,11 @@ while n==0: #for (4.)
     user_input.lower
 
     #2.converting user input into integer:
-    if "ro" in user_input:
+    if "r" in user_input:
         user_input=1
-    elif "pa" in user_input:
+    elif "p" in user_input:
         user_input=2
-    elif "sci" in user_input:
+    elif "s" in user_input:
         user_input=3
     else:
         print("Invaild option entered! \n Try Again")
@@ -24,33 +24,23 @@ while n==0: #for (4.)
     import random
     comp_list=[1,2,3]
     computer= random.choice(comp_list) 
+    comp_dict={1:"Rock",2:"Paper",3:"Scissors"}
 
     #Deciding user won or lose:
     
     #Draw conditions:
     if computer==user_input:
-
-        if computer==1:
-            print("Ai: Rock  V/s  Rock :You") 
-        elif computer==2:
-            print("Ai: Paper  V/s  Paper :You") 
-        elif computer==3:
-            print("Ai: Scissors  V/s  Scissors :You") 
+        print(f"Ai: {comp_dict[computer]}  V/s  {comp_dict[user_input]}:You") 
         print(f"Tie!")
+    
     #Wining conditions:
-    elif computer==1 and user_input==2:
-        print("Ai: Rock  V/s  Paper :You \n You won!")
-    elif computer==2 and user_input==3:
-        print("Ai: Paper  V/s  Scissors :You \n You won!")
-    elif computer==3 and user_input==1:
-        print("Ai: Scissors  V/s  Rock :You \n You won!")
+    elif (computer-user_input)==2 or (computer-user_input)==-1: 
+        print(f"Ai: {comp_dict[computer]}  V/s  {comp_dict[user_input]}:You \n You won!")
+    
     #loosing conditions:
-    elif computer==2 and user_input==1:
-        print("Ai: Rock  V/s  Paper :You \n You lost!")
-    elif computer==3 and user_input==2:
-        print("Ai: Rock  V/s  Paper :You \n You lost!")
-    elif computer==1 and user_input==3:
-        print("Ai: Rock  V/s  Paper :You \n You lost!")
+    elif (computer-user_input)==-2 or (computer-user_input)==1: 
+        print(f"Ai: {comp_dict[computer]}  V/s  {comp_dict[user_input]}:You \n You lost!")
+    
 
    #4.start the program again:
     repeat=input("Do you want to play again \ny/n:")
