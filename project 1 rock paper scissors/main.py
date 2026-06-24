@@ -24,7 +24,6 @@ while n==0: #for (4.)
     import random
     comp_list=[1,2,3]
     computer= random.choice(comp_list) 
-    print(computer)
 
     #Deciding user won or lose:
     
